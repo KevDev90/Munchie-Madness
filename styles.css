@@ -63,12 +63,19 @@ section {
 }
 
 .grocery-list {
-    margin: 20px auto;
-    text-align: center;
-  	width: 500px;
-  	background-color: #adf7d8;
-  	border-radius: 5px;
-  	height: 200px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.snack-card {
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	background-color: #adf7d8;
+	border-radius: 5px;
+	height: 200px;
+	margin-top: 50px;
 
 
 }

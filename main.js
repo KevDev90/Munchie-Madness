@@ -4,23 +4,27 @@ var snack = document.getElementById('snackItem');
 var snackInfo = document.getElementById('snackDesc');
 var addSnack = document.getElementById('addSnack')
 var groceryList = document.querySelector('.grocery-list')
+var cardArr = [];
 
 addSnack.addEventListener('click', createCard);
 
-function createCard() {
-  groceryList.insertAdjacentHTML('afterbegin', "<section class='snack-card'><h1 id='card-title' contentEditable='true'>Snack</h1><p id='description' contentEditable='true'>description</p><button class='delete'>Delete</button></section>");
-  document.querySelector('#snackItem').innerText = `${snack.value}`;
-  document.querySelector('#snackDesc').innerText = `${snackInfo.value}`;
-  snack.value = '';
-  snackInfo.value = '';
+function createCard(newCard) {
+  groceryList.insertAdjacentHTML('beforeend', `<section id="${newCard.id}" class='snack-card'><h1 id='' contentEditable='true'>Snack</h1><p id='description' contentEditable='true'>description</p><button class='delete'>Delete</button></section>`);
+  console.log(newCard.id)
+
 };
 
-function removeCard() {
-    var elem = document.querySelector('grocery-list');
-    elem.parentNode.removeChild(elem);
-    return false;
-}
 
+function createInstance() {
+  var pastCard = new Card(name.value, discription.value);
+  cardArr.push(pastCard);
+  return pastCard;
+};
+
+function addPastCard() {
+  var newCard = createInstance();
+  makeCard(newCard);
+};
 
 
 
